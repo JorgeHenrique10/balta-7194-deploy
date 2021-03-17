@@ -63,9 +63,9 @@ namespace Shop
             });
 
             //Parte de injeção de dependencia do EntityFramework
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
-            //services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
-            
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+
             //services.AddScoped<DataContext, DataContext>(); Não precisa mais o AddDbContext já faz o fechamento da conexao agora
 
             services.AddSwaggerGen(c =>
